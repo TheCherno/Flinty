@@ -1,0 +1,9 @@
+.vs/
+bin/
+
+*.suo
+*.db
+*.opendb
+*.log
+*.tlog
+*.pdb
