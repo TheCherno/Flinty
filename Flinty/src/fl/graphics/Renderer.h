@@ -9,6 +9,9 @@ namespace fl {
 	private:
 
 	public:
+		Renderer();
+		void Init();
+
 		void SetClearColor(float r, float g, float b, float a);
 	};
 

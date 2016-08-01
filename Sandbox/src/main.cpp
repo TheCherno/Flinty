@@ -1,6 +1,7 @@
 #include <Flinty.h>
 
 #include <iostream>
+#include <fl/gl.h>
 
 using namespace fl;
 
