@@ -14,6 +14,7 @@ namespace fl {
 	typedef std::function<void()> UpdateCallback;
 	typedef std::function<void(Renderer&)> RenderCallback;
 	typedef std::function<void(int, int)> KeyCallback;
+	typedef std::function<void(int, int)> ResizeCallback;
 
 	class FL_API Window
 	{
@@ -24,9 +25,12 @@ namespace fl {
 		UpdateCallback m_OnUpdate;
 		RenderCallback m_OnRender;
 		KeyCallback m_KeyCallback;
+		ResizeCallback m_ResizeCallback;
 		std::thread m_GraphicsThread;
 		Renderer* m_Renderer;
 		HashSet<int> m_PressedKeys;
+
+		float m_FrameTime;
 	public:
 		Window(const String& title, uint width, uint height);
 		~Window();
@@ -37,13 +41,17 @@ namespace fl {
 		inline void SetUpdateCallback(const UpdateCallback& callback) { m_OnUpdate = callback; }
 		inline void SetRenderCallback(const RenderCallback& callback) { m_OnRender = callback; }
 		inline void SetKeyCallback(const KeyCallback& callback) { m_KeyCallback = callback; }
+		inline void SetResizeCallback(const ResizeCallback& callback) { m_ResizeCallback = callback; }
 		inline bool IsKeyPressed(int key) { return m_PressedKeys.find(key) != m_PressedKeys.end(); }
+
+		inline float GetFrameTime() const { return m_FrameTime; }
 	private:
 		void GraphicsThread();
 
 		void Clear();
 
 		friend void GLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+		friend void GLFWWindowSizeCallback(GLFWwindow* window, int width, int height);
 	};
 
 #define FL_KEY_RELEASED 0

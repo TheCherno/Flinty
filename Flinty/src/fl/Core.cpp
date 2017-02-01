@@ -21,8 +21,7 @@ namespace fl {
 
 	bool GLLogCall(const char* function, const char* file, int line)
 	{
-		GLenum error = GLCheckError();
-		if (error != GL_NO_ERROR)
+		while (GLenum error = GLCheckError())
 		{
 			std::cout << "[OpenGL Error] (" << error << "): " << function << " " << file <<  ":" << line << std::endl;
 			return false;

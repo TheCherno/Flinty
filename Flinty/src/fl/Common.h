@@ -48,5 +48,5 @@ namespace fl {
 			__debugbreak(); \
 		}
 #else
-	#define SP_ASSERT(x, ...)
+	#define FL_ASSERT(x, ...)
 #endif

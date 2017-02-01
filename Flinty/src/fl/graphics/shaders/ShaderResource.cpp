@@ -22,7 +22,7 @@ namespace fl {
 	{
 		switch (type)
 		{
-		case Type::TEXTURE2D:	return "sampler2D";
+		case Type::TEXTURE2D:		return "sampler2D";
 		case Type::TEXTURECUBE:		return "samplerCube";
 		case Type::TEXTURESHADOW:	return "samplerShadow";
 		}

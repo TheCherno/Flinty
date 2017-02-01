@@ -72,6 +72,18 @@ namespace fl {
 		inline const ShaderUniformBufferDeclaration* GetVSUserUniformBuffer() const { return m_VSUserUniformBuffer; }
 		inline const ShaderUniformBufferDeclaration* GetPSUserUniformBuffer() const { return m_PSUserUniformBuffer; }
 		inline const ShaderResourceList& GetResources() const { return m_Resources; }
+
+		template<typename T>
+		void SetUniform(const String& name, const T& data)
+		{
+			SetUniform(name, (byte*)&data);
+		}
+
+		template<typename T>
+		void SetUniform(const String& name, const T* data)
+		{
+			SetUniform(name, (byte*)data);
+		}
 	private:
 		static uint Compile(String** shaders, ShaderErrorInfo& info = ShaderErrorInfo());
 		static void PreProcess(const String& source, String** shaders);

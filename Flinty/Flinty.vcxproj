@@ -165,6 +165,7 @@
     <ClInclude Include="src\fl\maths\vec4.h" />
     <ClInclude Include="src\fl\String.h" />
     <ClInclude Include="src\fl\system\FileSystem.h" />
+    <ClInclude Include="src\fl\system\Timer.h" />
     <ClInclude Include="src\fl\Types.h" />
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +192,9 @@
     <ProjectReference Include="..\Dependencies\GLEW\GLEW.vcxproj">
       <Project>{6e0deef6-f4c2-4b7e-a2fe-bb9bae5ec8d1}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\fl\graphics\shaders\default\Simple.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
