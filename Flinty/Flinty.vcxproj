@@ -94,7 +94,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>src;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>FL_PLATFORM_WINDOWS;FL_CORE_DLL;GLEW_STATIC;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FL_DEBUG;FL_PLATFORM_WINDOWS;FL_CORE_DLL;GLEW_STATIC;_WINDLL;%(PreprocessorDefinitions)_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLFW\lib\x86;</AdditionalLibraryDirectories>
@@ -117,7 +117,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>src;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>FL_PLATFORM_WINDOWS;FL_CORE_DLL;GLEW_STATIC;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>FL_PLATFORM_WINDOWS;FL_CORE_DLL;GLEW_STATIC;_WINDLL;%(PreprocessorDefinitions)_CRT_SECURE_NO_WARNINGS;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -145,18 +145,56 @@
     <ClInclude Include="src\fl\Core.h" />
     <ClInclude Include="src\fl\gl.h" />
     <ClInclude Include="src\fl\graphics\Renderer.h" />
+    <ClInclude Include="src\fl\graphics\Shader.h" />
+    <ClInclude Include="src\fl\graphics\shaders\Shader.h" />
+    <ClInclude Include="src\fl\graphics\shaders\ShaderFactory.h" />
+    <ClInclude Include="src\fl\graphics\shaders\ShaderManager.h" />
+    <ClInclude Include="src\fl\graphics\shaders\ShaderResource.h" />
+    <ClInclude Include="src\fl\graphics\shaders\ShaderUniform.h" />
     <ClInclude Include="src\fl\graphics\Window.h" />
+    <ClInclude Include="src\fl\Common.h" />
+    <ClInclude Include="src\fl\maths\AABB.h" />
+    <ClInclude Include="src\fl\maths\mat4.h" />
+    <ClInclude Include="src\fl\maths\maths.h" />
+    <ClInclude Include="src\fl\maths\maths_func.h" />
+    <ClInclude Include="src\fl\maths\Quaternion.h" />
+    <ClInclude Include="src\fl\maths\Rectangle.h" />
+    <ClInclude Include="src\fl\maths\tvec2.h" />
+    <ClInclude Include="src\fl\maths\vec2.h" />
+    <ClInclude Include="src\fl\maths\vec3.h" />
+    <ClInclude Include="src\fl\maths\vec4.h" />
+    <ClInclude Include="src\fl\String.h" />
+    <ClInclude Include="src\fl\system\FileSystem.h" />
+    <ClInclude Include="src\fl\system\Timer.h" />
     <ClInclude Include="src\fl\Types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\fl\Core.cpp" />
     <ClCompile Include="src\fl\graphics\Renderer.cpp" />
+    <ClCompile Include="src\fl\graphics\Shader.cpp" />
+    <ClCompile Include="src\fl\graphics\shaders\Shader.cpp" />
+    <ClCompile Include="src\fl\graphics\shaders\ShaderFactory.cpp" />
+    <ClCompile Include="src\fl\graphics\shaders\ShaderManager.cpp" />
+    <ClCompile Include="src\fl\graphics\shaders\ShaderResource.cpp" />
+    <ClCompile Include="src\fl\graphics\shaders\ShaderUniform.cpp" />
     <ClCompile Include="src\fl\graphics\Window.cpp" />
+    <ClCompile Include="src\fl\maths\AABB.cpp" />
+    <ClCompile Include="src\fl\maths\mat4.cpp" />
+    <ClCompile Include="src\fl\maths\Quaternion.cpp" />
+    <ClCompile Include="src\fl\maths\Rectangle.cpp" />
+    <ClCompile Include="src\fl\maths\vec2.cpp" />
+    <ClCompile Include="src\fl\maths\vec3.cpp" />
+    <ClCompile Include="src\fl\maths\vec4.cpp" />
+    <ClCompile Include="src\fl\String.cpp" />
+    <ClCompile Include="src\fl\system\FileSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dependencies\GLEW\GLEW.vcxproj">
       <Project>{6e0deef6-f4c2-4b7e-a2fe-bb9bae5ec8d1}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\fl\graphics\shaders\default\Simple.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
