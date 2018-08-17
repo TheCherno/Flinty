@@ -16,8 +16,10 @@ template<typename K, typename V> using HashMap = std::unordered_map<K, V>;
 
 #ifdef FL_PLATFORM_WINDOWS
 	#ifdef FL_CORE_DLL
+		#pragma message("Exporting...")
 		#define FL_API __declspec(dllexport)
 	#else
+		#pragma message("Importing...")
 		#define FL_API __declspec(dllimport)
 	#endif
 #else

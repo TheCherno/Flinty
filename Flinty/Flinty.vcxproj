@@ -142,6 +142,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Flinty.h" />
+    <ClInclude Include="src\fl\assets\Asset.h" />
+    <ClInclude Include="src\fl\assets\AssetManager.h" />
     <ClInclude Include="src\fl\Core.h" />
     <ClInclude Include="src\fl\gl.h" />
     <ClInclude Include="src\fl\graphics\Renderer.h" />
@@ -150,6 +152,8 @@
     <ClInclude Include="src\fl\graphics\shaders\ShaderManager.h" />
     <ClInclude Include="src\fl\graphics\shaders\ShaderResource.h" />
     <ClInclude Include="src\fl\graphics\shaders\ShaderUniform.h" />
+    <ClInclude Include="src\fl\graphics\Texture.h" />
+    <ClInclude Include="src\fl\graphics\Texture2D.h" />
     <ClInclude Include="src\fl\graphics\Window.h" />
     <ClInclude Include="src\fl\Common.h" />
     <ClInclude Include="src\fl\maths\AABB.h" />
@@ -168,6 +172,7 @@
     <ClInclude Include="src\fl\Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\fl\assets\AssetManager.cpp" />
     <ClCompile Include="src\fl\Core.cpp" />
     <ClCompile Include="src\fl\graphics\Renderer.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\Shader.cpp" />
@@ -175,6 +180,8 @@
     <ClCompile Include="src\fl\graphics\shaders\ShaderManager.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\ShaderResource.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\ShaderUniform.cpp" />
+    <ClCompile Include="src\fl\graphics\Texture.cpp" />
+    <ClCompile Include="src\fl\graphics\Texture2D.cpp" />
     <ClCompile Include="src\fl\graphics\Window.cpp" />
     <ClCompile Include="src\fl\maths\AABB.cpp" />
     <ClCompile Include="src\fl\maths\mat4.cpp" />

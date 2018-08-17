@@ -32,6 +32,8 @@ int main()
 	window.SetRenderCallback(OnRender);
 	window.SetKeyCallback(OnKeyEvent);
 
+	AssetManager::Init();
+
 	s_Shader = ShaderFactory::SimpleShader();
 	ShaderManager::Add(s_Shader);
 	s_Shader->Bind();
@@ -48,20 +50,13 @@ int main()
 		0, 1, 2, 2, 3, 0
 	};
 
-	uint texture;
-	glGenTextures(1, &texture);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
-
 	int* pixels = new int[64 * 64];
 	for (int i = 0; i < 64 * 64; i++)
 		pixels[i] = 0xff0000ff + i * 256;
-	
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 64, 64, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+	Texture2D* texture = AssetManager::CreateTexture<Texture2D>(TextureFormat::RGBA, 64, 64);
+	texture->SetData(pixels);
+	texture->Bind();
 
 	uint buffer;
 	glGenBuffers(1, &buffer);
