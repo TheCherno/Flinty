@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flinty", "Flinty\Flinty.vcxproj", "{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{75BBA025-3F0C-4F6A-925F-004409C7F954}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Flinty", "Flinty\Flinty.vcxproj", "{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{8D9B38C9-A6B6-4736-94F1-F3CC77956F79}"
 EndProject
@@ -13,34 +13,20 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLEW", "Dependencies\GLEW\G
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x64.ActiveCfg = Debug|x64
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x64.Build.0 = Debug|x64
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x86.ActiveCfg = Debug|Win32
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x86.Build.0 = Debug|Win32
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x64.ActiveCfg = Release|x64
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x64.Build.0 = Release|x64
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x86.ActiveCfg = Release|Win32
-		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x86.Build.0 = Release|Win32
-		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Debug|x64.ActiveCfg = Debug|x64
-		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Debug|x64.Build.0 = Debug|x64
 		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Debug|x86.ActiveCfg = Debug|Win32
 		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Debug|x86.Build.0 = Debug|Win32
-		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Release|x64.ActiveCfg = Release|x64
-		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Release|x64.Build.0 = Release|x64
 		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Release|x86.ActiveCfg = Release|Win32
 		{75BBA025-3F0C-4F6A-925F-004409C7F954}.Release|x86.Build.0 = Release|Win32
-		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Debug|x64.ActiveCfg = Debug|x64
-		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Debug|x64.Build.0 = Debug|x64
+		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x86.ActiveCfg = Debug|Win32
+		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Debug|x86.Build.0 = Debug|Win32
+		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x86.ActiveCfg = Release|Win32
+		{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}.Release|x86.Build.0 = Release|Win32
 		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Debug|x86.ActiveCfg = Debug|Win32
 		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Debug|x86.Build.0 = Debug|Win32
-		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Release|x64.ActiveCfg = Release|x64
-		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Release|x64.Build.0 = Release|x64
 		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Release|x86.ActiveCfg = Release|Win32
 		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
@@ -49,5 +35,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6E0DEEF6-F4C2-4B7E-A2FE-BB9BAE5EC8D1} = {8D9B38C9-A6B6-4736-94F1-F3CC77956F79}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {832CB1B8-3EF4-4D4A-A8AC-F69C44E00F2D}
 	EndGlobalSection
 EndGlobal
