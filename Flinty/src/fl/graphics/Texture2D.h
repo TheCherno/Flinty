@@ -14,12 +14,14 @@ namespace fl {
 
 		void SetData(const void* data);
 
-		int GetWidth() override { return m_Width; }
-		int GetHeight() override { return m_Height; }
-		TextureFormat GetFormat() { return m_Format; }
+		int GetWidth() const override { return m_Width; }
+		int GetHeight() const override { return m_Height; }
+		TextureFormat GetFormat() const override { return m_Format; }
 
-		void Bind(unsigned int slot = 0);
-		void Unbind();
+		void Bind(unsigned int slot = 0) const override;
+		void Unbind() const override;
+
+		uint GetRendererID() const { return m_RendererID; }
 	private:
 		void Create();
 	private:

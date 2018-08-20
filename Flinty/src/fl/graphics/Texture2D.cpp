@@ -37,13 +37,13 @@ namespace fl {
 		glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, m_Width, m_Height, format, GL_UNSIGNED_BYTE, data);
 	}
 
-	void Texture2D::Bind(unsigned int slot)
+	void Texture2D::Bind(unsigned int slot) const
 	{
 		glActiveTexture(GL_TEXTURE0 + slot);
 		glBindTexture(GL_TEXTURE_2D, m_RendererID);
 	}
 
-	void Texture2D::Unbind()
+	void Texture2D::Unbind() const
 	{
 		glBindTexture(GL_TEXTURE_2D, 0);
 	}

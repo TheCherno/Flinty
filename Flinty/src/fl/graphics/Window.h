@@ -45,6 +45,9 @@ namespace fl {
 		inline bool IsKeyPressed(int key) { return m_PressedKeys.find(key) != m_PressedKeys.end(); }
 
 		inline float GetFrameTime() const { return m_FrameTime; }
+
+		inline uint GetWidth() const { return m_Width; }
+		inline uint GetHeight() const { return m_Height; }
 	private:
 		void GraphicsThread();
 

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CEB28EA3-4B44-4C0D-BFD4-948644DC0B78}</ProjectGuid>
     <RootNamespace>Flinty</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,6 +146,9 @@
     <ClInclude Include="src\fl\assets\AssetManager.h" />
     <ClInclude Include="src\fl\Core.h" />
     <ClInclude Include="src\fl\gl.h" />
+    <ClInclude Include="src\fl\graphics\Framebuffer.h" />
+    <ClInclude Include="src\fl\graphics\Framebuffer2D.h" />
+    <ClInclude Include="src\fl\graphics\IndexBuffer.h" />
     <ClInclude Include="src\fl\graphics\Renderer.h" />
     <ClInclude Include="src\fl\graphics\shaders\Shader.h" />
     <ClInclude Include="src\fl\graphics\shaders\ShaderFactory.h" />
@@ -154,6 +157,9 @@
     <ClInclude Include="src\fl\graphics\shaders\ShaderUniform.h" />
     <ClInclude Include="src\fl\graphics\Texture.h" />
     <ClInclude Include="src\fl\graphics\Texture2D.h" />
+    <ClInclude Include="src\fl\graphics\VertexArray.h" />
+    <ClInclude Include="src\fl\graphics\VertexBuffer.h" />
+    <ClInclude Include="src\fl\graphics\VertexBufferLayout.h" />
     <ClInclude Include="src\fl\graphics\Window.h" />
     <ClInclude Include="src\fl\Common.h" />
     <ClInclude Include="src\fl\maths\AABB.h" />
@@ -174,6 +180,9 @@
   <ItemGroup>
     <ClCompile Include="src\fl\assets\AssetManager.cpp" />
     <ClCompile Include="src\fl\Core.cpp" />
+    <ClCompile Include="src\fl\graphics\Framebuffer.cpp" />
+    <ClCompile Include="src\fl\graphics\Framebuffer2D.cpp" />
+    <ClCompile Include="src\fl\graphics\IndexBuffer.cpp" />
     <ClCompile Include="src\fl\graphics\Renderer.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\Shader.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\ShaderFactory.cpp" />
@@ -182,6 +191,9 @@
     <ClCompile Include="src\fl\graphics\shaders\ShaderUniform.cpp" />
     <ClCompile Include="src\fl\graphics\Texture.cpp" />
     <ClCompile Include="src\fl\graphics\Texture2D.cpp" />
+    <ClCompile Include="src\fl\graphics\VertexArray.cpp" />
+    <ClCompile Include="src\fl\graphics\VertexBuffer.cpp" />
+    <ClCompile Include="src\fl\graphics\VertexBufferLayout.cpp" />
     <ClCompile Include="src\fl\graphics\Window.cpp" />
     <ClCompile Include="src\fl\maths\AABB.cpp" />
     <ClCompile Include="src\fl\maths\mat4.cpp" />
@@ -199,6 +211,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="src\fl\graphics\shaders\default\FullScreenQuad.shader" />
     <None Include="src\fl\graphics\shaders\default\Simple.shader" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
