@@ -2,7 +2,7 @@
 
 #include "AABB.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	Rectangle::Rectangle()
 		: position(vec2()), size(vec2())

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fl/Core.h>
+#include <fl/Application.h>
 #include <fl/graphics/Window.h>
 
 #include <fl/graphics/Texture2D.h>

@@ -2,7 +2,7 @@
 
 #include "mat4.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	vec4::vec4(float scalar)
 		: x(scalar), y(scalar), z(scalar), w(scalar)

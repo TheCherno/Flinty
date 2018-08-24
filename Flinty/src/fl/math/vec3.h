@@ -2,7 +2,7 @@
 
 #include "fl/Common.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	struct vec2;
 	struct vec4;

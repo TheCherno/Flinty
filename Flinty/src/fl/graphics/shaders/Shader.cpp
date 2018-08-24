@@ -593,19 +593,19 @@ namespace fl {
 			SetUniform1i(uniform->GetLocation(), *(int*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC2:
-			SetUniform2f(uniform->GetLocation(), *(maths::vec2*)&data[offset]);
+			SetUniform2f(uniform->GetLocation(), *(math::vec2*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC3:
-			SetUniform3f(uniform->GetLocation(), *(maths::vec3*)&data[offset]);
+			SetUniform3f(uniform->GetLocation(), *(math::vec3*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC4:
-			SetUniform4f(uniform->GetLocation(), *(maths::vec4*)&data[offset]);
+			SetUniform4f(uniform->GetLocation(), *(math::vec4*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::MAT3:
-			// TODO: SetUniformMat3(uniform->GetLocation(), *(maths::mat3*)&data[offset]);
+			// TODO: SetUniformMat3(uniform->GetLocation(), *(math::mat3*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::MAT4:
-			SetUniformMat4(uniform->GetLocation(), *(maths::mat4*)&data[offset]);
+			SetUniformMat4(uniform->GetLocation(), *(math::mat4*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::STRUCT:
 			SetUniformStruct(uniform, data, offset);
@@ -637,19 +637,19 @@ namespace fl {
 			SetUniform1i(field.GetLocation(), *(int*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC2:
-			SetUniform2f(field.GetLocation(), *(maths::vec2*)&data[offset]);
+			SetUniform2f(field.GetLocation(), *(math::vec2*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC3:
-			SetUniform3f(field.GetLocation(), *(maths::vec3*)&data[offset]);
+			SetUniform3f(field.GetLocation(), *(math::vec3*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::VEC4:
-			SetUniform4f(field.GetLocation(), *(maths::vec4*)&data[offset]);
+			SetUniform4f(field.GetLocation(), *(math::vec4*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::MAT3:
-			// TODO: SetUniformMat3(field.location, *(maths::mat3*)&data[offset]);
+			// TODO: SetUniformMat3(field.location, *(math::mat3*)&data[offset]);
 			break;
 		case ShaderUniformDeclaration::Type::MAT4:
-			SetUniformMat4(field.GetLocation(), *(maths::mat4*)&data[offset]);
+			SetUniformMat4(field.GetLocation(), *(math::mat4*)&data[offset]);
 			break;
 		default:
 			FL_ASSERT(false, "Unknown type!");
@@ -676,22 +676,22 @@ namespace fl {
 		SetUniform1iv(GetUniformLocation(name), value, count);
 	}
 
-	void Shader::SetUniform2f(const String& name, const maths::vec2& vector)
+	void Shader::SetUniform2f(const String& name, const math::vec2& vector)
 	{
 		SetUniform2f(GetUniformLocation(name), vector);
 	}
 
-	void Shader::SetUniform3f(const String& name, const maths::vec3& vector)
+	void Shader::SetUniform3f(const String& name, const math::vec3& vector)
 	{
 		SetUniform3f(GetUniformLocation(name), vector);
 	}
 
-	void Shader::SetUniform4f(const String& name, const maths::vec4& vector)
+	void Shader::SetUniform4f(const String& name, const math::vec4& vector)
 	{
 		SetUniform4f(GetUniformLocation(name), vector);
 	}
 
-	void Shader::SetUniformMat4(const String& name, const maths::mat4& matrix)
+	void Shader::SetUniformMat4(const String& name, const math::mat4& matrix)
 	{
 		SetUniformMat4(GetUniformLocation(name), matrix);
 	}
@@ -716,22 +716,22 @@ namespace fl {
 		GLCall(glUniform1iv(location, count, value));
 	}
 
-	void Shader::SetUniform2f(uint location, const maths::vec2& vector)
+	void Shader::SetUniform2f(uint location, const math::vec2& vector)
 	{
 		GLCall(glUniform2f(location, vector.x, vector.y));
 	}
 
-	void Shader::SetUniform3f(uint location, const maths::vec3& vector)
+	void Shader::SetUniform3f(uint location, const math::vec3& vector)
 	{
 		GLCall(glUniform3f(location, vector.x, vector.y, vector.z));
 	}
 
-	void Shader::SetUniform4f(uint location, const maths::vec4& vector)
+	void Shader::SetUniform4f(uint location, const math::vec4& vector)
 	{
 		GLCall(glUniform4f(location, vector.x, vector.y, vector.z, vector.w));
 	}
 
-	void Shader::SetUniformMat4(uint location, const maths::mat4& matrix)
+	void Shader::SetUniformMat4(uint location, const math::mat4& matrix)
 	{
 		GLCall(glUniformMatrix4fv(location, 1, GL_TRUE, matrix.elements));
 	}

@@ -5,9 +5,9 @@
 
 #include "vec3.h"
 #include "vec4.h"
-#include "maths_func.h"
+#include "math_func.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	struct Quaternion;
 

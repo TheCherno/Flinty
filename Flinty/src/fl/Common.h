@@ -10,6 +10,9 @@
 #include <unordered_map>
 #include <unordered_set>
 
+// Disable warnings
+#pragma warning(once : 4251)
+
 // Some typedefs to rename C++'s questionable names
 template<typename T> using HashSet = std::unordered_set<T>;
 template<typename K, typename V> using HashMap = std::unordered_map<K, V>;
@@ -52,3 +55,5 @@ namespace fl {
 #else
 	#define FL_ASSERT(x, ...)
 #endif
+
+#define BIT(x) 1 << x

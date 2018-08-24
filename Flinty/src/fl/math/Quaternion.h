@@ -4,7 +4,7 @@
 
 #include "mat4.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	struct FL_API Quaternion
 	{

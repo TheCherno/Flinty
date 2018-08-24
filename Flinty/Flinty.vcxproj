@@ -141,10 +141,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\fl\Application.h" />
     <ClInclude Include="src\Flinty.h" />
     <ClInclude Include="src\fl\assets\Asset.h" />
     <ClInclude Include="src\fl\assets\AssetManager.h" />
     <ClInclude Include="src\fl\Core.h" />
+    <ClInclude Include="src\fl\debug\ImGuiLayer.h" />
+    <ClInclude Include="src\fl\events\ApplicationEvent.h" />
+    <ClInclude Include="src\fl\events\Event.h" />
+    <ClInclude Include="src\fl\events\KeyEvent.h" />
+    <ClInclude Include="src\fl\events\MouseEvent.h" />
     <ClInclude Include="src\fl\gl.h" />
     <ClInclude Include="src\fl\graphics\Framebuffer.h" />
     <ClInclude Include="src\fl\graphics\Framebuffer2D.h" />
@@ -162,24 +168,28 @@
     <ClInclude Include="src\fl\graphics\VertexBufferLayout.h" />
     <ClInclude Include="src\fl\graphics\Window.h" />
     <ClInclude Include="src\fl\Common.h" />
-    <ClInclude Include="src\fl\maths\AABB.h" />
-    <ClInclude Include="src\fl\maths\mat4.h" />
-    <ClInclude Include="src\fl\maths\maths.h" />
-    <ClInclude Include="src\fl\maths\maths_func.h" />
-    <ClInclude Include="src\fl\maths\Quaternion.h" />
-    <ClInclude Include="src\fl\maths\Rectangle.h" />
-    <ClInclude Include="src\fl\maths\tvec2.h" />
-    <ClInclude Include="src\fl\maths\vec2.h" />
-    <ClInclude Include="src\fl\maths\vec3.h" />
-    <ClInclude Include="src\fl\maths\vec4.h" />
+    <ClInclude Include="src\fl\Layer.h" />
+    <ClInclude Include="src\fl\LayerStack.h" />
+    <ClInclude Include="src\fl\math\AABB.h" />
+    <ClInclude Include="src\fl\math\mat4.h" />
+    <ClInclude Include="src\fl\math\math.h" />
+    <ClInclude Include="src\fl\math\math_func.h" />
+    <ClInclude Include="src\fl\math\Quaternion.h" />
+    <ClInclude Include="src\fl\math\Rectangle.h" />
+    <ClInclude Include="src\fl\math\tvec2.h" />
+    <ClInclude Include="src\fl\math\vec2.h" />
+    <ClInclude Include="src\fl\math\vec3.h" />
+    <ClInclude Include="src\fl\math\vec4.h" />
     <ClInclude Include="src\fl\String.h" />
     <ClInclude Include="src\fl\system\FileSystem.h" />
     <ClInclude Include="src\fl\system\Timer.h" />
     <ClInclude Include="src\fl\Types.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\fl\Application.cpp" />
     <ClCompile Include="src\fl\assets\AssetManager.cpp" />
     <ClCompile Include="src\fl\Core.cpp" />
+    <ClCompile Include="src\fl\debug\ImGuiLayer.cpp" />
     <ClCompile Include="src\fl\graphics\Framebuffer.cpp" />
     <ClCompile Include="src\fl\graphics\Framebuffer2D.cpp" />
     <ClCompile Include="src\fl\graphics\IndexBuffer.cpp" />
@@ -195,13 +205,15 @@
     <ClCompile Include="src\fl\graphics\VertexBuffer.cpp" />
     <ClCompile Include="src\fl\graphics\VertexBufferLayout.cpp" />
     <ClCompile Include="src\fl\graphics\Window.cpp" />
-    <ClCompile Include="src\fl\maths\AABB.cpp" />
-    <ClCompile Include="src\fl\maths\mat4.cpp" />
-    <ClCompile Include="src\fl\maths\Quaternion.cpp" />
-    <ClCompile Include="src\fl\maths\Rectangle.cpp" />
-    <ClCompile Include="src\fl\maths\vec2.cpp" />
-    <ClCompile Include="src\fl\maths\vec3.cpp" />
-    <ClCompile Include="src\fl\maths\vec4.cpp" />
+    <ClCompile Include="src\fl\Layer.cpp" />
+    <ClCompile Include="src\fl\LayerStack.cpp" />
+    <ClCompile Include="src\fl\math\AABB.cpp" />
+    <ClCompile Include="src\fl\math\mat4.cpp" />
+    <ClCompile Include="src\fl\math\Quaternion.cpp" />
+    <ClCompile Include="src\fl\math\Rectangle.cpp" />
+    <ClCompile Include="src\fl\math\vec2.cpp" />
+    <ClCompile Include="src\fl\math\vec3.cpp" />
+    <ClCompile Include="src\fl\math\vec4.cpp" />
     <ClCompile Include="src\fl\String.cpp" />
     <ClCompile Include="src\fl\system\FileSystem.cpp" />
   </ItemGroup>

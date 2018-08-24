@@ -1,7 +1,7 @@
 #pragma once
 
 #include "fl/Common.h"
-#include "fl/maths/maths.h"
+#include "fl/math/math.h"
 
 // From glew.h
 #define GL_BYTE                           0x1400
@@ -61,19 +61,19 @@ namespace fl {
 		}
 
 		template<>
-		void Push<maths::vec2>(const std::string& name, uint count, bool normalized)
+		void Push<math::vec2>(const std::string& name, uint count, bool normalized)
 		{
 			Push(name, GL_FLOAT, sizeof(float), 2 * count, normalized);
 		}
 
 		template<>
-		void Push<maths::vec3>(const std::string& name, uint count, bool normalized)
+		void Push<math::vec3>(const std::string& name, uint count, bool normalized)
 		{
 			Push(name, GL_FLOAT, sizeof(float), 3 * count, normalized);
 		}
 
 		template<>
-		void Push<maths::vec4>(const std::string& name, uint count, bool normalized)
+		void Push<math::vec4>(const std::string& name, uint count, bool normalized)
 		{
 			Push(name, GL_FLOAT, sizeof(float), 4 * count, normalized);
 		}

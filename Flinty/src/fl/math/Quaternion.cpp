@@ -1,6 +1,6 @@
 #include "Quaternion.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 #define _VECTORMATH_SLERP_TOL 0.999f
 

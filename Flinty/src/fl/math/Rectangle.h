@@ -5,7 +5,7 @@
 #include "vec2.h"
 #include "vec3.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	struct AABB;
 

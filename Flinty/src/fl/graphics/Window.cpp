@@ -3,10 +3,17 @@
 #include <GLFW/glfw3.h>
 #include "fl/system/Timer.h"
 
+#include "fl/events/ApplicationEvent.h"
+#include "fl/events/KeyEvent.h"
+#include "fl/events/MouseEvent.h"
+
 namespace fl {
 
 	static void GLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+	static void GLFWMouseButtonCallback(GLFWwindow* glfwWindow, int button, int action, int mods);
+	static void GLFWMousePositionCallback(GLFWwindow* glfwWindow, double xpos, double ypos);
 	static void GLFWWindowSizeCallback(GLFWwindow* window, int width, int height);
+
 	static void EmptyFunction() {}
 	static void EmptyRenderFunction(Renderer&) {}
 	static void EmptyKeyCallback(int, int) {}
@@ -34,50 +41,37 @@ namespace fl {
 		GLFWwindow* window = m_GLFWWindow;
 		glfwSetWindowUserPointer(window, this);
 		glfwSetKeyCallback(window, GLFWKeyCallback);
+		glfwSetMouseButtonCallback(window, GLFWMouseButtonCallback);
+		glfwSetCursorPosCallback(window, GLFWMousePositionCallback);
 		glfwSetWindowSizeCallback(window, GLFWWindowSizeCallback);
 		glfwMakeContextCurrent(window);
+
 		m_Renderer = new Renderer();
 	}
 
-	void Window::Show()
+	void Window::ProcessEvents()
 	{
-		// m_GraphicsThread = std::thread(std::bind(&Window::GraphicsThread, this));
-		GraphicsThread();
+		glfwPollEvents();
+		if (glfwWindowShouldClose(m_GLFWWindow))
+			DispatchEvent(WindowClosedEvent());
 	}
 
-	void Window::GraphicsThread()
+	void Window::SwapBuffers()
 	{
-		GLFWwindow* window = m_GLFWWindow;
-		float updateTimer = 0.0f;
-		float updateTick = 1.0f / 60.0f;
-		uint frames = 0;
-		uint updates = 0;
-		Timer timer;
-		while (!glfwWindowShouldClose(window))
-		{
-			float now = timer.ElapsedMillis();
+		glfwSwapBuffers(m_GLFWWindow);
+	}
 
-			Clear();
-
-			if (now - updateTimer > updateTick)
-			{
-				m_OnUpdate();
-				updates++;
-				updateTimer += updateTick;
-			}
-
-			{
-				Timer frametime;
-				m_OnRender(*m_Renderer);
-				frames++;
-				m_FrameTime = frametime.ElapsedMillis();
-			}
-			glfwSwapBuffers(window);
-			glfwPollEvents();
-		}
+	void Window::Destroy()
+	{
 		glfwTerminate();
 	}
-	
+
+	void Window::DispatchEvent(Event& event)
+	{
+		// Forward event to subscriber
+		m_EventCallback(event);
+	}
+
 	void Window::Clear()
 	{
 		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
@@ -86,11 +80,29 @@ namespace fl {
 	static void GLFWKeyCallback(GLFWwindow* glfwWindow, int key, int scancode, int action, int mods)
 	{
 		Window* window = (Window*)glfwGetWindowUserPointer(glfwWindow);
-		window->m_KeyCallback(key, action);
 		if (action == GLFW_PRESS)
-			window->m_PressedKeys.insert(key);
+			window->DispatchEvent(KeyPressedEvent(key, 0));
+		else if (action == GLFW_REPEAT)
+			window->DispatchEvent(KeyPressedEvent(key, 1));
 		else if (action == GLFW_RELEASE)
-			window->m_PressedKeys.erase(key);
+			window->DispatchEvent(KeyReleasedEvent(key));
+	}
+
+	static void GLFWMouseButtonCallback(GLFWwindow* glfwWindow, int button, int action, int mods)
+	{
+		Window* window = (Window*)glfwGetWindowUserPointer(glfwWindow);
+		if (action == GLFW_PRESS)
+			window->DispatchEvent(MouseButtonPressedEvent(button, 0));
+		else if (action == GLFW_REPEAT)
+			window->DispatchEvent(MouseButtonPressedEvent(button, 1));
+		else if (action == GLFW_RELEASE)
+			window->DispatchEvent(MouseButtonReleasedEvent(button));
+	}
+
+	static void GLFWMousePositionCallback(GLFWwindow* glfwWindow, double xpos, double ypos)
+	{
+		Window* window = (Window*)glfwGetWindowUserPointer(glfwWindow);
+		window->DispatchEvent(MouseMovedEvent((float)xpos, (float)ypos, 0, 0));
 	}
 
 	static void GLFWWindowSizeCallback(GLFWwindow* glfwWindow, int width, int height)

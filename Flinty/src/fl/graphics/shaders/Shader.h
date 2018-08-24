@@ -2,7 +2,7 @@
 
 #include "fl/Common.h"
 
-#include "fl/maths/maths.h"
+#include "fl/math/math.h"
 
 #include "ShaderUniform.h"
 #include "ShaderResource.h"
@@ -113,19 +113,19 @@ namespace fl {
 		void SetUniform1fv(const String& name, float* value, int count);
 		void SetUniform1i(const String& name, int value);
 		void SetUniform1iv(const String& name, int* value, int count);
-		void SetUniform2f(const String& name, const maths::vec2& vector);
-		void SetUniform3f(const String& name, const maths::vec3& vector);
-		void SetUniform4f(const String& name, const maths::vec4& vector);
-		void SetUniformMat4(const String& name, const maths::mat4& matrix);
+		void SetUniform2f(const String& name, const math::vec2& vector);
+		void SetUniform3f(const String& name, const math::vec3& vector);
+		void SetUniform4f(const String& name, const math::vec4& vector);
+		void SetUniformMat4(const String& name, const math::mat4& matrix);
 
 		void SetUniform1f(uint location, float value);
 		void SetUniform1fv(uint location, float* value, int count);
 		void SetUniform1i(uint location, int value);
 		void SetUniform1iv(uint location, int* value, int count);
-		void SetUniform2f(uint location, const maths::vec2& vector);
-		void SetUniform3f(uint location, const maths::vec3& vector);
-		void SetUniform4f(uint location, const maths::vec4& vector);
-		void SetUniformMat4(uint location, const maths::mat4& matrix);
+		void SetUniform2f(uint location, const math::vec2& vector);
+		void SetUniform3f(uint location, const math::vec3& vector);
+		void SetUniform4f(uint location, const math::vec4& vector);
+		void SetUniformMat4(uint location, const math::mat4& matrix);
 	public:
 		static bool TryCompile(const String& source, String& error);
 		static bool TryCompileFromFile(const String& filepath, String& error);

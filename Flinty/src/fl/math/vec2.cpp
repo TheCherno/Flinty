@@ -2,7 +2,7 @@
 
 #include <sstream>
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	vec2::vec2()
 		: x(0.0f), y(0.0f)

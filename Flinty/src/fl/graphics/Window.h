@@ -3,6 +3,7 @@
 #include "fl/Common.h"
 #include "fl/String.h"
 #include "Renderer.h"
+#include "fl/events/Event.h"
 
 #include <functional>
 #include <thread>
@@ -15,6 +16,7 @@ namespace fl {
 	typedef std::function<void(Renderer&)> RenderCallback;
 	typedef std::function<void(int, int)> KeyCallback;
 	typedef std::function<void(int, int)> ResizeCallback;
+	typedef std::function<void(Event&)> EventCallback;
 
 	class FL_API Window
 	{
@@ -25,10 +27,10 @@ namespace fl {
 		UpdateCallback m_OnUpdate;
 		RenderCallback m_OnRender;
 		KeyCallback m_KeyCallback;
+		EventCallback m_EventCallback;
 		ResizeCallback m_ResizeCallback;
 		std::thread m_GraphicsThread;
 		Renderer* m_Renderer;
-		HashSet<int> m_PressedKeys;
 
 		float m_FrameTime;
 	public:
@@ -36,25 +38,30 @@ namespace fl {
 		~Window();
 
 		void Init();
-		void Show();
 
+		void ProcessEvents();
+		void SwapBuffers();
+		void Destroy();
+
+		inline void SetEventCallback(const EventCallback& callback) { m_EventCallback = callback; }
 		inline void SetUpdateCallback(const UpdateCallback& callback) { m_OnUpdate = callback; }
 		inline void SetRenderCallback(const RenderCallback& callback) { m_OnRender = callback; }
 		inline void SetKeyCallback(const KeyCallback& callback) { m_KeyCallback = callback; }
 		inline void SetResizeCallback(const ResizeCallback& callback) { m_ResizeCallback = callback; }
-		inline bool IsKeyPressed(int key) { return m_PressedKeys.find(key) != m_PressedKeys.end(); }
 
 		inline float GetFrameTime() const { return m_FrameTime; }
 
 		inline uint GetWidth() const { return m_Width; }
 		inline uint GetHeight() const { return m_Height; }
 	private:
-		void GraphicsThread();
-
 		void Clear();
+
+		void DispatchEvent(Event& event);
 
 		friend void GLFWKeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 		friend void GLFWWindowSizeCallback(GLFWwindow* window, int width, int height);
+		friend void GLFWMouseButtonCallback(GLFWwindow* glfwWindow, int button, int action, int mods);
+		friend void GLFWMousePositionCallback(GLFWwindow* glfwWindow, double xpos, double ypos);
 	};
 
 #define FL_KEY_RELEASED 0

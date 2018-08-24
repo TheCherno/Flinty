@@ -5,7 +5,7 @@
 
 #include "vec3.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	struct FL_API vec2
 	{

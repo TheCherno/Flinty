@@ -12,8 +12,11 @@
 
 namespace fl {
 
+	Renderer* Renderer::s_Instance = nullptr;
+
 	Renderer::Renderer()
 	{
+		s_Instance = this;
 		Init();
 	}
 
@@ -42,8 +45,8 @@ namespace fl {
 		IndexBuffer* ib = new IndexBuffer(indices, 6);
 
 		VertexBufferLayout layout;
-		layout.Push<maths::vec3>("position");
-		layout.Push<maths::vec2>("texcoord");
+		layout.Push<math::vec3>("position");
+		layout.Push<math::vec2>("texcoord");
 		vb->SetLayout(layout);
 
 		m_FullScreenQuadVA = new VertexArray(vb, ib);

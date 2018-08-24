@@ -3,7 +3,7 @@
 
 #include "fl/Common.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	template <class T>
 	struct tvec2

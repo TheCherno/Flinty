@@ -5,7 +5,7 @@
 #include "Quaternion.h"
 #include "vec4.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	mat4::mat4()
 	{

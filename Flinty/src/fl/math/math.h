@@ -1,7 +1,7 @@
 #pragma once
 
 #include <math.h>
-#include "maths_func.h"
+#include "math_func.h"
 
 #include "vec2.h"
 #include "vec3.h"
@@ -16,7 +16,7 @@
 
 #include "Quaternion.h"
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 	
 	typedef tvec2<int> ivec2;
 	typedef tvec2<uint> uvec2;

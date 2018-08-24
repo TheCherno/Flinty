@@ -6,7 +6,7 @@
 
 #define FL_PI 3.14159265358f
 
-namespace fl { namespace maths {
+namespace fl { namespace math {
 
 	FL_API inline float toRadians(float degrees)
 	{
