@@ -11,6 +11,8 @@ namespace fl {
 		Layer(const std::string& debugName);
 		virtual ~Layer();
 
+		virtual void OnInit() {}
+
 		virtual void OnTick() {}
 		virtual void OnUpdate() {}
 		virtual void OnRender() {}

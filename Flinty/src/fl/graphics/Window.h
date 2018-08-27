@@ -5,6 +5,8 @@
 #include "Renderer.h"
 #include "fl/events/Event.h"
 
+#include "fl/Input.h"
+
 #include <functional>
 #include <thread>
 
@@ -31,6 +33,7 @@ namespace fl {
 		ResizeCallback m_ResizeCallback;
 		std::thread m_GraphicsThread;
 		Renderer* m_Renderer;
+		InputManager* m_InputManager;
 
 		float m_FrameTime;
 	public:

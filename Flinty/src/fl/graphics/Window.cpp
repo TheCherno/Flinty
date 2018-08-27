@@ -47,6 +47,7 @@ namespace fl {
 		glfwMakeContextCurrent(window);
 
 		m_Renderer = new Renderer();
+		m_InputManager = new InputManager();
 	}
 
 	void Window::ProcessEvents()
@@ -86,6 +87,8 @@ namespace fl {
 			window->DispatchEvent(KeyPressedEvent(key, 1));
 		else if (action == GLFW_RELEASE)
 			window->DispatchEvent(KeyReleasedEvent(key));
+
+		window->m_InputManager->m_KeyState[key] = (action == GLFW_PRESS) || (action == GLFW_REPEAT);
 	}
 
 	static void GLFWMouseButtonCallback(GLFWwindow* glfwWindow, int button, int action, int mods)
@@ -97,12 +100,16 @@ namespace fl {
 			window->DispatchEvent(MouseButtonPressedEvent(button, 1));
 		else if (action == GLFW_RELEASE)
 			window->DispatchEvent(MouseButtonReleasedEvent(button));
+
+		window->m_InputManager->m_MouseButtons[button] = (action == GLFW_PRESS) || (action == GLFW_REPEAT);
 	}
 
 	static void GLFWMousePositionCallback(GLFWwindow* glfwWindow, double xpos, double ypos)
 	{
 		Window* window = (Window*)glfwGetWindowUserPointer(glfwWindow);
 		window->DispatchEvent(MouseMovedEvent((float)xpos, (float)ypos, 0, 0));
+
+		window->m_InputManager->m_MousePosition = math::vec2((float)xpos, (float)ypos);
 	}
 
 	static void GLFWWindowSizeCallback(GLFWwindow* glfwWindow, int width, int height)

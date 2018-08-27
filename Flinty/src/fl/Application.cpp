@@ -9,9 +9,14 @@ namespace fl {
 
 #define APP_BIND_METHOD(method) std::bind(&Application:: ## method, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application(const std::string& name)
 		: m_Name(name), m_FrameTime(0.0f), m_Running(true)
 	{
+		FL_ASSERT(s_Instance == nullptr);
+		s_Instance = this;
+
 		m_Window = std::make_unique<Window>(name, 1280, 720);
 		m_Window->SetEventCallback(APP_BIND_METHOD(DispatchEvent));
 	}

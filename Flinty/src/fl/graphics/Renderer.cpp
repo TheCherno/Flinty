@@ -52,6 +52,11 @@ namespace fl {
 		m_FullScreenQuadVA = new VertexArray(vb, ib);
 	}
 
+	void Renderer::Clear()
+	{
+		GLCall(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
+	}
+
 	void Renderer::SetClearColor(float r, float g, float b, float a)
 	{
 		GLCall(glClearColor(r, g, b, a));

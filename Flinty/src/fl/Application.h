@@ -36,6 +36,8 @@ namespace fl {
 		inline int GetHeight() { return m_Window->GetHeight(); }
 
 		inline LayerStack& GetLayerStack() { return m_LayerStack; }
+
+		inline static Application& Get() { return *s_Instance; }
 	private:
 		void RunLoop();
 
@@ -51,6 +53,8 @@ namespace fl {
 		bool m_Running;
 		float m_FrameTime;
 		LayerStack m_LayerStack;
+	private:
+		static Application* s_Instance;
 	};
 
 }

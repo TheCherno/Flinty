@@ -19,6 +19,7 @@ namespace fl {
 	void LayerStack::PushLayer(Layer* layer)
 	{
 		m_Layers.push_back(layer);
+		layer->OnInit();
 	}
 
 	void LayerStack::PopLayer(Layer* layer)
@@ -29,6 +30,7 @@ namespace fl {
 	void LayerStack::PushOverlay(Layer* layer)
 	{
 		m_Overlays.push_back(layer);
+		layer->OnInit();
 	}
 
 	void LayerStack::PopOverlay(Layer* layer)

@@ -147,6 +147,8 @@
     <ClInclude Include="src\fl\assets\AssetManager.h" />
     <ClInclude Include="src\fl\Core.h" />
     <ClInclude Include="src\fl\debug\ImGuiLayer.h" />
+    <ClInclude Include="src\fl\ecs\Component.h" />
+    <ClInclude Include="src\fl\ecs\MayaCameraComponent.h" />
     <ClInclude Include="src\fl\events\ApplicationEvent.h" />
     <ClInclude Include="src\fl\events\Event.h" />
     <ClInclude Include="src\fl\events\KeyEvent.h" />
@@ -155,6 +157,7 @@
     <ClInclude Include="src\fl\graphics\Framebuffer.h" />
     <ClInclude Include="src\fl\graphics\Framebuffer2D.h" />
     <ClInclude Include="src\fl\graphics\IndexBuffer.h" />
+    <ClInclude Include="src\fl\graphics\MayaCamera.h" />
     <ClInclude Include="src\fl\graphics\Renderer.h" />
     <ClInclude Include="src\fl\graphics\shaders\Shader.h" />
     <ClInclude Include="src\fl\graphics\shaders\ShaderFactory.h" />
@@ -168,6 +171,7 @@
     <ClInclude Include="src\fl\graphics\VertexBufferLayout.h" />
     <ClInclude Include="src\fl\graphics\Window.h" />
     <ClInclude Include="src\fl\Common.h" />
+    <ClInclude Include="src\fl\Input.h" />
     <ClInclude Include="src\fl\Layer.h" />
     <ClInclude Include="src\fl\LayerStack.h" />
     <ClInclude Include="src\fl\math\AABB.h" />
@@ -190,9 +194,11 @@
     <ClCompile Include="src\fl\assets\AssetManager.cpp" />
     <ClCompile Include="src\fl\Core.cpp" />
     <ClCompile Include="src\fl\debug\ImGuiLayer.cpp" />
+    <ClCompile Include="src\fl\ecs\MayaCameraComponent.cpp" />
     <ClCompile Include="src\fl\graphics\Framebuffer.cpp" />
     <ClCompile Include="src\fl\graphics\Framebuffer2D.cpp" />
     <ClCompile Include="src\fl\graphics\IndexBuffer.cpp" />
+    <ClCompile Include="src\fl\graphics\MayaCamera.cpp" />
     <ClCompile Include="src\fl\graphics\Renderer.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\Shader.cpp" />
     <ClCompile Include="src\fl\graphics\shaders\ShaderFactory.cpp" />
@@ -205,6 +211,7 @@
     <ClCompile Include="src\fl\graphics\VertexBuffer.cpp" />
     <ClCompile Include="src\fl\graphics\VertexBufferLayout.cpp" />
     <ClCompile Include="src\fl\graphics\Window.cpp" />
+    <ClCompile Include="src\fl\Input.cpp" />
     <ClCompile Include="src\fl\Layer.cpp" />
     <ClCompile Include="src\fl\LayerStack.cpp" />
     <ClCompile Include="src\fl\math\AABB.cpp" />

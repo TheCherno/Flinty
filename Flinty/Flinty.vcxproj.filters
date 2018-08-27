@@ -144,6 +144,18 @@
     <ClInclude Include="src\fl\debug\ImGuiLayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\fl\ecs\Component.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fl\ecs\MayaCameraComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fl\graphics\MayaCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fl\Input.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\fl\Core.cpp">
@@ -234,6 +246,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\fl\debug\ImGuiLayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fl\ecs\MayaCameraComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fl\graphics\MayaCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fl\Input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

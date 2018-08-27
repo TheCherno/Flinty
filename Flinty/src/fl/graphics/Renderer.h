@@ -16,6 +16,7 @@ namespace fl {
 		Renderer();
 		void Init();
 
+		void Clear();
 		void SetClearColor(float r, float g, float b, float a);
 		void Draw(VertexArray* va, Shader* shader);
 		void DrawFullScreenQuad(Shader* shader);

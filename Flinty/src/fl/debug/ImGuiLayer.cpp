@@ -25,8 +25,8 @@ namespace fl { namespace debug {
 
 	void ImGuiLayer::OnEvent(Event& event)
 	{
-		if (event.IsInCategory(EventCategoryInput))
-			std::cout << event.GetName() << std::endl;
+		//if (event.IsInCategory(EventCategoryInput))
+		//	std::cout << event.GetName() << std::endl;
 	}
 
 } }
