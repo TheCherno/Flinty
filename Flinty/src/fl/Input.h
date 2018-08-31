@@ -6,7 +6,7 @@
 
 #include <functional>
 
-class GLFWwindow;
+struct GLFWwindow;
 
 namespace fl {
 

@@ -6,12 +6,13 @@
 #include <iostream>
 
 // Common data structures
+#include <string>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
 // Disable warnings
-#pragma warning(once : 4251)
+#pragma warning(disable : 4251)
 
 // Some typedefs to rename C++'s questionable names
 template<typename T> using HashSet = std::unordered_set<T>;
@@ -43,7 +44,7 @@ namespace fl {
 #endif
 
 #ifdef FL_DEBUG
-	#define FL_ASSERT(x) \
+	#define FL_ASSERT(x, ...) \
 		if (!(x)) {\
 			std::cout << "*************************" << std::endl; \
 			std::cout << "    ASSERTION FAILED!    " << std::endl; \

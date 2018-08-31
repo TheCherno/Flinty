@@ -18,9 +18,6 @@
     <ClCompile Include="src\glew.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\glewinfo.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\visualinfo.c">
       <Filter>Source Files</Filter>
     </ClCompile>

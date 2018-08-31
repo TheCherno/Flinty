@@ -50,13 +50,13 @@ namespace fl {
 
 	bool LayerStack::OnTickEvent(AppTickEvent& event)
 	{
-		for (int i = 0; i < m_Overlays.size(); i++)
+		for (uint i = 0; i < m_Overlays.size(); i++)
 		{
 			Layer* layer = m_Overlays[i];
 			layer->OnTick();
 		}
 
-		for (int i = 0; i < m_Layers.size(); i++)
+		for (uint i = 0; i < m_Layers.size(); i++)
 		{
 			Layer* layer = m_Layers[i];
 			layer->OnTick();
@@ -67,13 +67,13 @@ namespace fl {
 
 	bool LayerStack::OnUpdateEvent(AppUpdateEvent& event)
 	{
-		for (int i = 0; i < m_Overlays.size(); i++)
+		for (uint i = 0; i < m_Overlays.size(); i++)
 		{
 			Layer* layer = m_Overlays[i];
 			layer->OnUpdate();
 		}
 
-		for (int i = 0; i < m_Layers.size(); i++)
+		for (uint i = 0; i < m_Layers.size(); i++)
 		{
 			Layer* layer = m_Layers[i];
 			layer->OnUpdate();
@@ -84,13 +84,13 @@ namespace fl {
 
 	bool LayerStack::OnRenderEvent(AppRenderEvent& event)
 	{
-		for (int i = 0; i < m_Overlays.size(); i++)
+		for (uint i = 0; i < m_Overlays.size(); i++)
 		{
 			Layer* layer = m_Overlays[i];
 			layer->OnRender();
 		}
 
-		for (int i = 0; i < m_Layers.size(); i++)
+		for (uint i = 0; i < m_Layers.size(); i++)
 		{
 			Layer* layer = m_Layers[i];
 			layer->OnRender();
@@ -101,13 +101,13 @@ namespace fl {
 
 	bool LayerStack::OnEvent(Event& event)
 	{
-		for (int i = 0; i < m_Overlays.size(); i++)
+		for (uint i = 0; i < m_Overlays.size(); i++)
 		{
 			Layer* layer = m_Overlays[i];
 			layer->OnEvent(event);
 		}
 
-		for (int i = 0; i < m_Layers.size(); i++)
+		for (uint i = 0; i < m_Layers.size(); i++)
 		{
 			Layer* layer = m_Layers[i];
 			layer->OnEvent(event);

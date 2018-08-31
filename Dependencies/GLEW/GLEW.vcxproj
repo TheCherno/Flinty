@@ -122,7 +122,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\glew.c" />
-    <ClCompile Include="src\glewinfo.c" />
     <ClCompile Include="src\visualinfo.c" />
   </ItemGroup>
   <ItemGroup>
