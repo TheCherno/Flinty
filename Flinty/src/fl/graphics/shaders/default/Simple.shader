@@ -9,7 +9,7 @@ layout (location = 3) in float tid;
 layout (location = 4) in float mid;
 layout (location = 5) in vec4 color;
 
-uniform mat4 pr_matrix;
+uniform mat4 u_MVP;
 
 out DATA
 {
@@ -18,7 +18,7 @@ out DATA
 
 void main()
 {
-	gl_Position = pr_matrix * position;
+	gl_Position = u_MVP * position;
 	vs_out.uv = uv;
 };
 

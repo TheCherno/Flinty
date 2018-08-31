@@ -17,8 +17,6 @@ void SceneLayer::OnInit()
 
 	m_Shader = ShaderFactory::SimpleShader();
 	ShaderManager::Add(m_Shader);
-	m_Shader->Bind();
-	m_Shader->SetUniform("pr_matrix", math::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
 	m_FullScreenQuadShader = ShaderFactory::FullScreenQuadShader();
 	ShaderManager::Add(m_FullScreenQuadShader);
@@ -74,7 +72,7 @@ void SceneLayer::OnRender()
 	renderer.Clear();
 
 	m_Shader->Bind();
-	m_Shader->SetUniform("pr_matrix", m_Camera.GetProjectionMatrix() *  m_Camera.GetViewMatrix());
+	m_Shader->SetUniform("u_MVP", m_Camera.GetProjectionMatrix() * m_Camera.GetViewMatrix());
 
 	m_Framebuffer->Bind();
 	renderer.Clear();

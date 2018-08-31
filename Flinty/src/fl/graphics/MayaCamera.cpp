@@ -19,14 +19,16 @@ namespace fl {
 		m_RotationSpeed = 0.002f;
 		m_ZoomSpeed = 0.2f;
 
-		m_Position = vec3(0.0f, 25.0f, -25.0f);
-		m_Rotation = vec3(90.0f, 0.0f, 0.0f);
+		m_Position = vec3(0.0f, 0.0f, -5.0f);
+		//m_Rotation = vec3(90.0f, 0.0f, 0.0f);
 
 		m_FocalPoint = vec3::Zero();
 		m_Distance = m_Position.Distance(m_FocalPoint);
 
-		m_Yaw = 3.0f * (float)M_PI / 4.0f;
-		m_Pitch = (float)M_PI / 4.0f;
+		//m_Yaw = 3.0f * (float)M_PI / 4.0f;
+		//m_Pitch = (float)M_PI / 4.0f;
+		m_Yaw = 0.0f;
+		m_Pitch = 0.0f;
 	}
 
 	void MayaCamera::Focus()
@@ -63,14 +65,14 @@ namespace fl {
 	void MayaCamera::MousePan(const vec2& delta)
 	{
 		m_FocalPoint += -GetRightDirection() * delta.x * m_PanSpeed * m_Distance;
-		m_FocalPoint += GetUpDirection() * delta.y * m_PanSpeed * m_Distance;
+		m_FocalPoint += GetUpDirection() * -delta.y * m_PanSpeed * m_Distance;
 	}
 
 	void MayaCamera::MouseRotate(const vec2& delta)
 	{
 		float yawSign = GetUpDirection().y < 0 ? -1.0f : 1.0f;
 		m_Yaw += yawSign * delta.x * m_RotationSpeed;
-		m_Pitch += delta.y * m_RotationSpeed;
+		m_Pitch += -delta.y * m_RotationSpeed;
 	}
 
 	void MayaCamera::MouseZoom(float delta)
